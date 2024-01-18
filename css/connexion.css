@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    background-color: #fafafa;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #ffffff;
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: stretch;
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #333333;
+    background-color: #ffffff;
+    border: none;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.navbar-link-important {
+    background-color: #D14836;
+    color: white;
+}
+
+.navbar-link:not(.navbar-link-important) {
+    background-color: transparent;
+}
+
+.navbar-link:hover {
+    background-color: #D14836;
+    color: white;
+}
+
+.navbar-link-important:hover {
+    background-color: #C1351D;
+}
+
+.container {
+    background: #fafafa;
+    padding: 30px;
+    border-radius: 8px;
+
+}
+
+.signup-form {
+    width: 800px;
+}
+
+form{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+fieldset {
+    border: 2px solid #eeeeee;
+    padding: 20px;
+    margin: 0;
+}
+
+legend {
+    padding: 0 10px;
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px; 
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #aaa;
+    box-shadow: 0 0 0 1px #aaa;
+}
+
+.submit-container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #357ae8; 
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
