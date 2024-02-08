@@ -1,48 +1,4 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, address,img,  ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead,
-article, aside,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-
-@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap'); 
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-    background-color: #fafafa;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
+@import url(./reset.css);
 
 .navbar {
     display: flex;
@@ -60,6 +16,7 @@ table {
     display: flex;
     align-items: center;
     padding: 20px 20px;
+    font: 1.6rem 'Open Sans', sans-serif;
 }
 
 .navbar-links {
@@ -104,6 +61,7 @@ table {
     padding-bottom: 1.25rem;
     text-align: center;
     font-size: 2.5rem;
+   
 
 }
 
@@ -137,8 +95,9 @@ table {
 }
 
 .hero h1 {
-    font-size: 2em; 
+    font-size: 4.5rem; 
     margin-bottom: 0.5em;
+    font-weight: 300;
 
 }
 
@@ -146,13 +105,15 @@ table {
     padding: 0.9rem 1.8rem;
     background-color: #D14836; 
     border: none;
-    color: white;
+    color: #fff;
     font-size: 1em;
     cursor: pointer;
-    border-radius: 0.1rem;
+    border-radius: 0.4rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border: 1px solid transparent;
     transition: background-color 0.3s, box-shadow 0.3s;
+    line-height: 3.5rem;
+    
 }
 
 .hero-button:hover {
@@ -210,6 +171,7 @@ input[type="password"] {
     border: 1px solid #ddd;
     border-radius: 4px;
     margin-bottom: 0.6rem; 
+    line-height: 3.6rem;
 }
 
 input[type="text"]:focus,
@@ -231,6 +193,7 @@ button {
     color: white;
     cursor: pointer;
     transition: background-color 0.2s;
+    line-height: 3.6rem;
 }
 
 

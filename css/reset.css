@@ -1,0 +1,35 @@
+/* HTML5 display-role reset for older browsers */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+html{
+    font-size: 62.5%;
+}
+figure, p, h1,h2,h3{
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+body {
+    font: 1.6rem 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #fafafa;
+    letter-spacing: .1rem;
+    margin: 0;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
