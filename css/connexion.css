@@ -1,3 +1,22 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address,img,  ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead,
+article, aside,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 article, aside, details, figcaption, figure,
@@ -30,12 +49,12 @@ table {
     justify-content: space-between;
     align-items: stretch;
     background-color: #ffffff;
-    padding: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 0; /
+    
 }
 
 .navbar-logo {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
     color: black;
     display: flex;
@@ -51,7 +70,7 @@ table {
 .navbar-link {
     display: flex;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 0.9rem;
     text-decoration: none;
     color: #333333;
     background-color: #ffffff;
@@ -109,12 +128,12 @@ legend {
 }
 
 .input-container {
-    margin-bottom: 15px;
+    margin-bottom: 0.9rem;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.3rem;
     color: #666;
 }
 
@@ -122,10 +141,10 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: calc(100% - 22px); 
-    padding: 10px;
+    padding: 0.6rem;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px; 
+    border-radius: 0.25rem;
+    margin-bottom: 0.6rem; 
 }
 
 input[type="text"]:focus,
@@ -141,7 +160,7 @@ input[type="password"]:focus {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 0.6rem 1.25rem;
     border: none;
     background-color: #357ae8; 
     color: #333;
