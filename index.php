@@ -2,45 +2,19 @@
     // start session
     session_start();
 ?>
-<!-- <?php
-    include_once "./src/header.inc.php";
-?> -->
-<!doctype html>
-<html lang=fr>
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="./css/main.css" rel="stylesheet">
-    <title>Gmail</title>
-</head>
+<?php
+    include_once "include/head.inc.php";
+?> 
+
 <body>
-<header>
-    <nav class="navbar">
-        <div class="navbar-logo"><img src="asset/mail.png" alt="logo"> Gmail</div>
-        <div class="navbar-links">
-            <a href="./index.php" class="navbar-link">POUR LES PROS</a>
-            <a href="./connexion.php" class="navbar-link">CONNEXION</a>
-            <a href="#form" class="navbar-link navbar-link-important">CRÉER UN COMPTE</a>
-        </div>
-    </nav>
-</header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Retrouvez la fluidité et la simplicité de Gmail sur tous vos appareils</h1>
-        <button class="hero-button">CRÉER UN COMPTE</button>
-    </div>
-</section>
+<?php
+    include_once "include/header.inc.php";
+?>
 
-<div class="para">
-    <h1> Une boîte de réception <br>entierement repensée</h1>
-    <p class="parat">
-        Avec les nouveaux onglets personalisables,
-        reperez <br> nouveaux messages et choisissez <br>ceux que vous souhaitez lire en proriorité
-    </p>
-</div>
+<?php 
+    include_once "include/hero.inc.php";
+?>
 
 
 <div class="container">
@@ -64,30 +38,36 @@
     ControlloerBase::event();
     ?>
 
-    <form class="signup-form" id="form" method="post">
-        <fieldset>
-            <legend>Créer un compte</legend>
-            <div class="input-container">
-                <label for="lastname">Nom :</label>
-                <input type="text" id="lastname" name="lastname" placeholder="Votre nom">
-            </div>
-            <div class="input-container">
-                <label for="firstname">Prénom :</label>
-                <input type="text" id="firstname" name="firstname" placeholder="Votre prénom">
-            </div>
-            <div class="input-container">
-                <label for="email">Mail :</label>
-                <input type="email" id="email" name="email" placeholder="exemple@gmail.com">
-            </div>
-            <div class="input-container">
-                <label for="password">Choisir votre mot de passe :</label>
-                <input type="password" id="password" name="password">
-            </div>
-            <div class="submit-container">
-                <button type="submit">VALIDER VOTRE COMPTE</button>
-            </div>
-        </fieldset>
-    </form>
+<?php
+$mysqli = new mysqli("localhost", "root", "", "projet_fakegmail");
+
+// Vérif la con
+if ($mysqli->connect_errno) {
+    echo "Échec de connexion à la base de données: " . $mysqli->connect_error;
+    exit();
+}
+
+// recup les données de la table
+$result = $mysqli->query("SELECT first_name, last_name, email, password FROM database_gmail");
+
+if ($result->num_rows > 0) {
+    echo "<table border='1'>";
+    echo "<tr><th>Prénom</th><th>Nom</th><th>Email</th><th>Mot de passe</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["first_name"]. "</td><td>" . $row["last_name"]. "</td><td>" . $row["email"]. "</td><td>" . $row["password"]. "</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "Aucun résultat trouvé";
+}
+
+$mysqli->close();
+?>
+
+    <?php
+    include_once "include/form.inc.php";
+    ?>
+
 </div>
 
 
