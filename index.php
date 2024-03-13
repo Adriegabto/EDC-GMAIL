@@ -34,39 +34,34 @@
 
 <?php
 
-    require_once __DIR__ . "/controller/controller_main.class.php";
-    ControlloerBase::event();
+    require_once __DIR__ . "bdd/UserManager.class.bdd";
     ?>
 
-<?php
-$mysqli = new mysqli("localhost", "root", "", "projet_fakegmail");
+<form class="signup-form" id="form" action="<?php print $_SERVER["PHP_SELF"]; ?>">
+        <fieldset>
+            <legend>Créer un compte</legend>
+            <div class="input-container">
+                <label for="lastname">Nom :</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Votre nom">
+            </div>
+            <div class="input-container">
+                <label for="firstname">Prénom :</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Votre prénom">
+            </div>
+            <div class="input-container">
+                <label for="email">Mail :</label>
+                <input type="email" id="email" name="email" placeholder="exemple@gmail.com">
+            </div>
+            <div class="input-container">
+                <label for="password">Choisir votre mot de passe :</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="submit-container">
+                <button type="submit">VALIDER VOTRE COMPTE</button>
+            </div>
+        </fieldset>
+    </form>
 
-// Vérif la con
-if ($mysqli->connect_errno) {
-    echo "Échec de connexion à la base de données: " . $mysqli->connect_error;
-    exit();
-}
-
-// recup les données de la table
-$result = $mysqli->query("SELECT first_name, last_name, email, password FROM database_gmail");
-
-if ($result->num_rows > 0) {
-    echo "<table border='1'>";
-    echo "<tr><th>Prénom</th><th>Nom</th><th>Email</th><th>Mot de passe</th></tr>";
-    while($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["first_name"]. "</td><td>" . $row["last_name"]. "</td><td>" . $row["email"]. "</td><td>" . $row["password"]. "</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "Aucun résultat trouvé";
-}
-
-$mysqli->close();
-?>
-
-    <?php
-    include_once "include/form.inc.php";
-    ?>
 
 </div>
 
